@@ -23,39 +23,98 @@ public class GeneralModel {
 	 public GeneralModel() {
 		 
 	 }
-	 
-	public IntegerProperty getQuantite() {
-		return quantite;
-	}
 
-	public void setQuantite(IntegerProperty quantite) {
-		this.quantite = quantite;
-	}
-
-	public ObjectProperty<Date> getDateDeLivraison() {
-		return DateDeLivraison;
-	}
-	public void setDateDeLivraison(ObjectProperty<Date> dateDeLivraison) {
-		DateDeLivraison = dateDeLivraison;
+	public final StringProperty matriculeProperty() {
+		return this.matricule;
 	}
 	
-	public DoubleProperty getPrix() {
-		return prix;
-	}
 
-	public void setPrix(DoubleProperty prix) {
-		this.prix = prix;
+	public final String getMatricule() {
+		return this.matriculeProperty().get();
 	}
+	
 
-	public StringProperty getMatricule() {
-		return matricule;
+	public final void setMatricule(final String matricule) {
+		this.matriculeProperty().set(matricule);
 	}
-	public StringProperty getLibelle() {
-		return libelle;
+	
+
+	public final StringProperty libelleProperty() {
+		return this.libelle;
 	}
-	public StringProperty getFournisseur() {
-		return Fournisseur;
+	
+
+	public final String getLibelle() {
+		return this.libelleProperty().get();
 	}
+	
+
+	public final void setLibelle(final String libelle) {
+		this.libelleProperty().set(libelle);
+	}
+	
+
+	public final IntegerProperty quantiteProperty() {
+		return this.quantite;
+	}
+	
+
+	public final int getQuantite() {
+		return this.quantiteProperty().get();
+	}
+	
+
+	public final void setQuantite(final int quantite) {
+		this.quantiteProperty().set(quantite);
+	}
+	
+
+	public final ObjectProperty<Date> DateDeLivraisonProperty() {
+		return this.DateDeLivraison;
+	}
+	
+
+	public final Date getDateDeLivraison() {
+		return this.DateDeLivraisonProperty().get();
+	}
+	
+
+	public final void setDateDeLivraison(final Date DateDeLivraison) {
+		this.DateDeLivraisonProperty().set(DateDeLivraison);
+	}
+	
+
+	public final DoubleProperty prixProperty() {
+		return this.prix;
+	}
+	
+
+	public final double getPrix() {
+		return this.prixProperty().get();
+	}
+	
+
+	public final void setPrix(final double prix) {
+		this.prixProperty().set(prix);
+	}
+	
+
+	public final StringProperty FournisseurProperty() {
+		return this.Fournisseur;
+	}
+	
+
+	public final String getFournisseur() {
+		return this.FournisseurProperty().get();
+	}
+	
+
+	public final void setFournisseur(final String Fournisseur) {
+		this.FournisseurProperty().set(Fournisseur);
+	}
+	
+	 
+	 
 	 
 	 
 	
