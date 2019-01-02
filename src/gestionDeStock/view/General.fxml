@@ -15,13 +15,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="635.0" prefWidth="1163.0" stylesheets="Styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionDeStock.controller.GeneralController">
+<AnchorPane id="AnchorPane" prefHeight="635.0" prefWidth="1163.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionDeStock.controller.GeneralController">
    <children>
-      <TabPane layoutY="85.0" prefHeight="462.0" prefWidth="953.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
+      <TabPane layoutY="85.0" prefHeight="462.0" prefWidth="953.0"  tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
         <tabs>
           <Tab fx:id="tabGS" text="Informations de Stock">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="1106.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="1106.0" >
                      <children>
                         <Separator layoutX="798.0" orientation="VERTICAL" prefHeight="521.0" prefWidth="51.0" />
                         <Label layoutX="886.0" layoutY="22.0" text="Saisie des Articles" textFill="#000000c8" underline="true">
@@ -41,28 +41,28 @@
                         <TableView fx:id="tableData" layoutX="1.0" layoutY="1.0" prefHeight="456.0" prefWidth="805.0">
                           <columns>
                             <TableColumn minWidth="8.0" prefWidth="9.0" />
-                            <TableColumn id="mat" fx:id="colId" prefWidth="64.0" text="Matricule" />
-                              <TableColumn id="nom" fx:id="colNom" prefWidth="114.5" text="Libelle" />
-                              <TableColumn id="Qte" fx:id="colAdresse" minWidth="0.0" prefWidth="72.5" text="Qté" />
-                              <TableColumn id="date" fx:id="colAnnee" prefWidth="95.0" text="Date d'arrivege" />
-                              <TableColumn id="prix" prefWidth="77.0" text="Prix HT" />
+                            <TableColumn id="mat" fx:id="colMat" prefWidth="64.0" text="Matricule" />
+                              <TableColumn id="nom" fx:id="colLib" prefWidth="114.5" text="Libelle" />
+                              <TableColumn id="Qte" fx:id="colQte" minWidth="0.0" prefWidth="72.5" text="Qté" />
+                              <TableColumn id="date" fx:id="colDate" prefWidth="95.0" text="Date d'arrivege" />
+                              <TableColumn id="prix" fx:id="colPrix" prefWidth="77.0" text="Prix HT" />
                               <TableColumn prefWidth="136.5" text="Fournisseur" />
                               <TableColumn fx:id="colAction" minWidth="0.0" prefWidth="265.5" text="Action" />
                           </columns>
                         </TableView>
-                        <TextField fx:id="txtChercher" layoutX="25.0" layoutY="470.0" prefHeight="25.0" prefWidth="296.0" promptText="Recherche par code a barres" />
-                        <Button fx:id="btnRafraichir" layoutX="856.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Actualiser" />
-                        <TextField fx:id="txtId" layoutX="867.0" layoutY="96.0" prefHeight="25.0" prefWidth="228.0" promptText="Code a barres " />
-                        <TextField fx:id="txtNom" layoutX="867.0" layoutY="140.0" prefHeight="25.0" prefWidth="225.0" promptText="Libelle de l'article" />
-                        <DatePicker fx:id="dateNaissance" layoutX="865.0" layoutY="351.0" prefHeight="25.0" prefWidth="228.0" promptText="Date de Livraison " />
+                        <TextField fx:id="chercher" layoutX="25.0" layoutY="470.0" prefHeight="25.0" prefWidth="296.0" promptText="Recherche par code a barres" />
+                        <Button fx:id="btnActualiser" layoutX="856.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Actualiser" />
+                        <TextField fx:id="tfmat" layoutX="867.0" layoutY="96.0" prefHeight="25.0" prefWidth="228.0" promptText="Code a barres " />
+                        <TextField fx:id="tflib" layoutX="867.0" layoutY="140.0" prefHeight="25.0" prefWidth="225.0" promptText="Libelle de l'article" />
+                        <DatePicker fx:id="dateDelivraison" layoutX="865.0" layoutY="351.0" prefHeight="25.0" prefWidth="228.0" promptText="Date de Livraison " />
                         <Label layoutX="870.0" layoutY="80.0" text="Code a Barres " />
                         <Label layoutX="868.0" layoutY="123.0" text="Libelle" />
                         <Label layoutX="867.0" layoutY="173.0" text="Quantité:" />
-                        <Spinner id="quantite" editable="true" layoutX="866.0" layoutY="190.0" min="0" max="1000" prefHeight="25.0" prefWidth="226.0" />
+                        <Spinner id="quantite" editable="true" layoutX="866.0" layoutY="190.0" max="1000" min="0" prefHeight="25.0" prefWidth="226.0" />
                         <Label layoutX="866.0" layoutY="223.0" text="Prix Unitaire HT:" />
-                        <TextField layoutX="866.0" layoutY="240.0" prefHeight="25.0" prefWidth="233.0" promptText="prix hors taxes" />
+                        <TextField fx:id="tfprix" layoutX="866.0" layoutY="240.0" prefHeight="25.0" prefWidth="233.0" promptText="prix hors taxes" />
                         <Label layoutX="866.0" layoutY="276.0" text="Fournisseur" />
-                        <TextField layoutX="866.0" layoutY="293.0" prefHeight="25.0" prefWidth="233.0" promptText="nom de fournisseur" />
+                        <TextField fx:id="tfdeal" layoutX="866.0" layoutY="293.0" prefHeight="25.0" prefWidth="233.0" promptText="nom de fournisseur" />
                         <Label layoutX="866.0" layoutY="326.0" text="date de Livraison : " />
                      </children>
                   </AnchorPane>
@@ -75,7 +75,7 @@
           </Tab>
         </tabs>
       </TabPane>
-      <AnchorPane prefHeight="85.0" prefWidth="1169.0" styleClass="headerPane">
+      <AnchorPane prefHeight="85.0" prefWidth="1169.0" styleClass="headerPane" stylesheets="@Styles.css">
          <children>
             <Text fill="#c6c6c6" layoutX="28.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion De Stock" underline="true">
                <font>
