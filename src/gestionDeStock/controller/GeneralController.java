@@ -3,6 +3,7 @@ package gestionDeStock.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -64,7 +65,7 @@ public class GeneralController implements Initializable{
 	    @FXML
 	    private TableColumn<GeneralModel, String> colDeal;
 	    @FXML
-	    private TableColumn<GeneralModel, String> colprix;
+	    private TableColumn<GeneralModel, String> colPrix;
 	    @FXML
 	    private TableColumn<GeneralModel, Date> colDate;
 	    @FXML
@@ -83,10 +84,10 @@ public class GeneralController implements Initializable{
 		public void initialize(URL location, ResourceBundle resources) {
 			colMat.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, String> celldata)-> celldata.getValue().matriculeProperty());
 			colLib.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, String> celldata)-> celldata.getValue().libelleProperty());
-	    	//colprix.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, String> celldata)->  celldata.getValue().prixProperty());
+	    	colPrix.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, String> celldata)->  celldata.getValue().prixProperty());
 			colDeal.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, String> celldata)-> celldata.getValue().FournisseurProperty());
 			colQte.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel,String> celldata)-> celldata.getValue().quantiteProperty());
-			
+			colDate.setCellValueFactory(new PropertyValueFactory("formatDate"));
           colAction.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Object, Boolean>,
             ObservableValue<Boolean>>() {
         @Override

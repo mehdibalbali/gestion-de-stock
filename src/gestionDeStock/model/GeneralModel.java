@@ -1,13 +1,10 @@
 
 package gestionDeStock.model;
 
-import java.util.Date;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -18,7 +15,8 @@ public class GeneralModel {
 	private StringProperty quantite =new SimpleStringProperty();
 	private  ObjectProperty<Date> DateDeLivraison = new SimpleObjectProperty<>();
 	private StringProperty prix =new SimpleStringProperty();
-	 private final StringProperty Fournisseur = new SimpleStringProperty();
+	private final StringProperty Fournisseur = new SimpleStringProperty();
+	private String formatdate;
 	
 	 public GeneralModel() {
 		 
@@ -116,7 +114,17 @@ public class GeneralModel {
 	
 	 
 	 
-	 
+	 public String getFormatDate() {
+	        Date date = getDateDeLivraison();
+	        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+	        String format = df.format(date);
+	        return format;
+	    }
+
+	    public void setFormatdate(String formatdate) {
+	        this.formatdate = formatdate;
+	    }
+
 	 
 	
 }
