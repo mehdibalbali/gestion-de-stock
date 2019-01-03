@@ -25,7 +25,9 @@ public class implGeneral implements GeneralInterface{
 	                GeneralModel m = new GeneralModel();
 	                m.setMatricule(rs.getString(1));
 	                m.setLibelle(rs.getString(2));
-	                m.setFournisseur(rs.getString(4));
+	                m.setQuantite(rs.getString(3));
+	                m.setPrix(rs.getString(4));
+	                m.setFournisseur(rs.getString(5));
 	                m.setDateDeLivraison(rs.getDate(6));
 	                listData.add(m);
 	            }
@@ -41,9 +43,11 @@ public class implGeneral implements GeneralInterface{
 		 c = new connexion();
 	        PreparedStatement ps;
 	        try {
-	            ps = c.connect().prepareStatement("insert into articles values(?,?,?,?)");
+	            ps = c.connect().prepareStatement("insert into articles values(?,?,?,?,?,?)");
 	            ps.setString(1, m.getMatricule());
 	            ps.setString(2, m.getLibelle());
+	            ps.setString(3, m.getQuantite());
+	            ps.setString(4, m.getPrix());
 	            ps.setString(5, m.getFournisseur());
 	            ps.setDate(6, (Date) m.getDateDeLivraison());
 	            ps.execute();
@@ -54,13 +58,38 @@ public class implGeneral implements GeneralInterface{
 
 	@Override
 	public void update(GeneralModel m) {
-		// TODO Auto-generated method stub
+		 c = new connexion();
+	        PreparedStatement ps;
+	        try {
+	            ps = c.connect().prepareStatement("update articles set matricule=?, libelle=?, quantite=?,prix=?,fournisseur=?,date=? where matricule = ?");
+	
+	            ps.setString(1, m.getMatricule());
+	            ps.setString(2, m.getLibelle());
+	            ps.setString(3, m.getQuantite());
+	            ps.setString(4, m.getPrix());
+	            ps.setString(5, m.getFournisseur());
+	            ps.setDate(6, (Date) m.getDateDeLivraison());
+	            ps.setString(7, m.getMatricule());
+	            
+	            ps.execute();
+	            
+	        } catch (Exception e) {
+	            Logger.getLogger(implGeneral.class.getName()).log(Level.SEVERE, null, e);
+	        }
 		
 	}
 
 	@Override
 	public void delete(GeneralModel m) {
-		// TODO Auto-generated method stub
+		  c = new connexion();
+	        PreparedStatement ps;
+	        try {
+	            ps = c.connect().prepareStatement("delete from tablebiodata where matricule = ?");
+	            ps.setString(1, m.getMatricule());
+	            ps.execute();
+	        } catch (Exception e) {
+	            Logger.getLogger(implGeneral.class.getName()).log(Level.SEVERE, null, e);
+	        }
 		
 	}
 
