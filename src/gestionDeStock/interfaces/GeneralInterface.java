@@ -10,9 +10,9 @@ import javafx.collections.ObservableList;
 public interface GeneralInterface {
 
 	ObservableList<GeneralModel> getAll();
-	void autoId(GeneralModel m);
 	void insert(GeneralModel m);
 	void update(GeneralModel m);
 	void delete(GeneralModel m);
+	ObservableList<GeneralModel> Recherche(String x);
 
 }
