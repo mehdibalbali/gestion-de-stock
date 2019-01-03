@@ -60,11 +60,13 @@ public class GeneralController implements Initializable{
 	    @FXML
 	    private TableColumn<GeneralModel, String> colLib;
 	    @FXML
-	    private TableColumn<GeneralModel,Integer > colQte;
+	    private TableColumn<GeneralModel,String > colQte;
 	    @FXML
 	    private TableColumn<GeneralModel, String> colDeal;
 	    @FXML
-	    private TableColumn<GeneralModel, Double> colprix;
+	    private TableColumn<GeneralModel, String> colprix;
+	    @FXML
+	    private TableColumn<GeneralModel, Date> colDate;
 	    @FXML
 	    private TableColumn colAction;
 	    @FXML
@@ -81,10 +83,10 @@ public class GeneralController implements Initializable{
 		public void initialize(URL location, ResourceBundle resources) {
 			colMat.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, String> celldata)-> celldata.getValue().matriculeProperty());
 			colLib.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, String> celldata)-> celldata.getValue().libelleProperty());
-		//quantite.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, Integer> celldata)-> celldata.getValue().quantiteProperty());
+	    	//colprix.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, String> celldata)->  celldata.getValue().prixProperty());
 			colDeal.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel, String> celldata)-> celldata.getValue().FournisseurProperty());
+			colQte.setCellValueFactory((TableColumn.CellDataFeatures<GeneralModel,String> celldata)-> celldata.getValue().quantiteProperty());
 			
-
           colAction.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Object, Boolean>,
             ObservableValue<Boolean>>() {
         @Override
@@ -111,7 +113,7 @@ public class GeneralController implements Initializable{
 private void dialog(Alert.AlertType alertType,String s){
     Alert alert = new Alert(alertType,s);
     alert.initStyle(StageStyle.UTILITY);
-    alert.setTitle("Info");
+    alert.setTitle("informations");
     alert.showAndWait();
 }
 
@@ -137,7 +139,7 @@ private void save(ActionEvent event) {
     GeneralModel m = new GeneralModel();
     m.setMatricule(tfmat.getText());
     m.setLibelle(tflib.getText());
-    //m.setQuantite(quantite.getText());
+    m.setQuantite(qte.getAccessibleText());
     m.setDateDeLivraison(Date.valueOf(dateDelivraison.getValue()));
     if (StatusCode.equals("0")) {
         crudData.insert(m);

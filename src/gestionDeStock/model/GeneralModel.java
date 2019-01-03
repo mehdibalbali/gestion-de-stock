@@ -15,9 +15,9 @@ import javafx.beans.property.StringProperty;
 public class GeneralModel {
 	private final StringProperty matricule = new SimpleStringProperty();
 	private final StringProperty libelle = new SimpleStringProperty();
-	private IntegerProperty quantite =new SimpleIntegerProperty();
+	private StringProperty quantite =new SimpleStringProperty();
 	private  ObjectProperty<Date> DateDeLivraison = new SimpleObjectProperty<>();
-	private DoubleProperty prix =new SimpleDoubleProperty();
+	private StringProperty prix =new SimpleStringProperty();
 	 private final StringProperty Fournisseur = new SimpleStringProperty();
 	
 	 public GeneralModel() {
@@ -54,17 +54,17 @@ public class GeneralModel {
 	}
 	
 
-	public final IntegerProperty quantiteProperty() {
+	public final StringProperty quantiteProperty() {
 		return this.quantite;
 	}
 	
 
-	public final int getQuantite() {
+	public final String getQuantite() {
 		return this.quantiteProperty().get();
 	}
 	
 
-	public final void setQuantite(final int quantite) {
+	public final void setQuantite(final String quantite) {
 		this.quantiteProperty().set(quantite);
 	}
 	
@@ -84,17 +84,17 @@ public class GeneralModel {
 	}
 	
 
-	public final DoubleProperty prixProperty() {
+	public final StringProperty prixProperty() {
 		return this.prix;
 	}
 	
 
-	public final double getPrix() {
+	public final String getPrix() {
 		return this.prixProperty().get();
 	}
 	
 
-	public final void setPrix(final double prix) {
+	public final void setPrix(final String prix) {
 		this.prixProperty().set(prix);
 	}
 	
