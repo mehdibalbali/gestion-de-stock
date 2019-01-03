@@ -112,6 +112,7 @@ public class GeneralModel {
 	public final void setFournisseur(final String Fournisseur) {
 		this.FournisseurProperty().set(Fournisseur);
 	}
+
 	
 	 
 	 
