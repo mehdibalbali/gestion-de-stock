@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="635.0" prefWidth="1163.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionDeStock.controller.StatistiquesController">
+<AnchorPane prefHeight="635.0" prefWidth="1163.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gestionDeStock.controller.StatistiquesController">
    <children>
       <Label layoutX="823.0" layoutY="21.0" text="Informations en tableau" underline="true">
          <font>
