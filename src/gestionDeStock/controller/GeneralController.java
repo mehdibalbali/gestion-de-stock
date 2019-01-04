@@ -23,10 +23,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumnBase;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -140,7 +143,9 @@ private void save(ActionEvent event) {
     GeneralModel m = new GeneralModel();
     m.setMatricule(tfmat.getText());
     m.setLibelle(tflib.getText());
-    m.setQuantite(qte.getAccessibleText());
+    m.setFournisseur(tfdeal.getText());
+    m.setPrix(tfprix.getText());
+    //m.setQuantite(qte.getValue());
     m.setDateDeLivraison(Date.valueOf(dateDelivraison.getValue()));
     if (StatusCode.equals("0")) {
         crudData.insert(m);
@@ -161,7 +166,7 @@ private void klikTableData(MouseEvent event) {
             GeneralModel clic = tableData.getSelectionModel().getSelectedItems().get(0);
             tfmat.setText(clic.getMatricule());
             tflib.setText(clic.getLibelle());
-            //qte.setValueFactory().setValue();
+            //qte.setAccessibleText(clic.getQuantite());
             tfprix.setText(clic.getPrix());
             tfdeal.setText(clic.getFournisseur());
             dateDelivraison.setValue(LocalDate.parse(clic.getDateDeLivraison().toString()));
@@ -201,7 +206,7 @@ private class ButtonCell extends TableCell<Object, Boolean> {
             crudData.delete(m);
             tampilData();
             clear();
-            dialog(Alert.AlertType.INFORMATION, "Les données ont été bien supprimées");
+            dialog(Alert.AlertType.INFORMATION, "L'article a été bien supprimées");
             statusclic = "0";
             StatusCode = "0";
         });

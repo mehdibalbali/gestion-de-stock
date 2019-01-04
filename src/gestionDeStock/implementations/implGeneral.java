@@ -25,7 +25,7 @@ public class implGeneral implements GeneralInterface{
 	                GeneralModel m = new GeneralModel();
 	                m.setMatricule(rs.getString(1));
 	                m.setLibelle(rs.getString(2));
-	                m.setQuantite(rs.getString(3));
+	                //m.setQuantite(rs.getString(3));
 	                m.setPrix(rs.getString(4));
 	                m.setFournisseur(rs.getString(5));
 	                m.setDateDeLivraison(rs.getDate(6));
@@ -46,7 +46,7 @@ public class implGeneral implements GeneralInterface{
 	            ps = c.connect().prepareStatement("insert into articles values(?,?,?,?,?,?)");
 	            ps.setString(1, m.getMatricule());
 	            ps.setString(2, m.getLibelle());
-	            ps.setString(3, m.getQuantite());
+	            ps.setString(3, "54");
 	            ps.setString(4, m.getPrix());
 	            ps.setString(5, m.getFournisseur());
 	            ps.setDate(6, (Date) m.getDateDeLivraison());
@@ -84,7 +84,7 @@ public class implGeneral implements GeneralInterface{
 		  c = new connexion();
 	        PreparedStatement ps;
 	        try {
-	            ps = c.connect().prepareStatement("delete from tablebiodata where matricule = ?");
+	            ps = c.connect().prepareStatement("delete from articles where matricule = ?");
 	            ps.setString(1, m.getMatricule());
 	            ps.execute();
 	        } catch (Exception e) {
@@ -98,7 +98,7 @@ public class implGeneral implements GeneralInterface{
 		 c = new connexion();
 	        ObservableList<GeneralModel> listData = FXCollections.observableArrayList();
 	        try {
-	            String sql = "select * from articles where nom like '%"+x+"%'";
+	            String sql = "select * from articles where matricule like '%"+x+"%'";
 	            ResultSet rs = c.connect().createStatement().executeQuery(sql);
 	            while (rs.next()) {   
 	                GeneralModel m = new GeneralModel();
