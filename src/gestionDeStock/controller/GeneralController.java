@@ -110,7 +110,7 @@ public class GeneralController implements Initializable{
     statusclic = "0";
     tampilData();
     tableData.getSelectionModel().clearSelection();
-       
+       afficheStatistiques();
 } 
 
 
@@ -166,7 +166,7 @@ private void klikTableData(MouseEvent event) {
             GeneralModel clic = tableData.getSelectionModel().getSelectedItems().get(0);
             tfmat.setText(clic.getMatricule());
             tflib.setText(clic.getLibelle());
-            //qte.setAccessibleText(clic.getQuantite());
+           // qte.setValueFactory(clic.quantiteProperty());
             tfprix.setText(clic.getPrix());
             tfdeal.setText(clic.getFournisseur());
             dateDelivraison.setValue(LocalDate.parse(clic.getDateDeLivraison().toString()));
@@ -231,4 +231,12 @@ private class ButtonCell extends TableCell<Object, Boolean> {
     }
 
 }
+	private void afficheStatistiques(){
+		try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            Parent p = fxmlLoader.load(getClass().getResourceAsStream("/gestionDeStock/view/Statistiques.fxml"));
+            paneLoadGrafik.getChildren().add(p);   
+        } catch (IOException e) {
+        }   
+	}
 }

@@ -37,21 +37,21 @@
                               <VBox spacing="3.0" />
                            </children>
                         </VBox>
-                        <Button fx:id="btnEnregistrer" onAction="#save" layoutX="1011.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Enregistrer" />
+                        <Button fx:id="btnEnregistrer" layoutX="1011.0" layoutY="470.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="104.0" text="Enregistrer" />
                         <TableView fx:id="tableData" layoutX="1.0" layoutY="1.0" prefHeight="456.0" prefWidth="805.0">
                           <columns>
                             <TableColumn minWidth="8.0" prefWidth="9.0" />
-                            <TableColumn  fx:id="colMat" prefWidth="99.5" text="Matricule" />
-                              <TableColumn  fx:id="colLib" prefWidth="151.0" text="Libelle" />
-                              <TableColumn  fx:id="colQte" minWidth="0.0" prefWidth="51.5" text="Qté" />
-                              <TableColumn  fx:id="colDate" prefWidth="109.5" text="Date d'arrivege" />
-                              <TableColumn  fx:id="colPrix" prefWidth="83.0" text="Prix HT" />
-                              <TableColumn prefWidth="117.0" fx:id="colDeal" text="Fournisseur" />
+                            <TableColumn fx:id="colMat" prefWidth="99.5" text="Matricule" />
+                              <TableColumn fx:id="colLib" prefWidth="151.0" text="Libelle" />
+                              <TableColumn fx:id="colQte" minWidth="0.0" prefWidth="51.5" text="Qté" />
+                              <TableColumn fx:id="colDate" prefWidth="109.5" text="Date d'arrivege" />
+                              <TableColumn fx:id="colPrix" prefWidth="83.0" text="Prix HT" />
+                              <TableColumn fx:id="colDeal" prefWidth="117.0" text="Fournisseur" />
                               <TableColumn fx:id="colAction" minWidth="0.0" prefWidth="213.5" text="Action" />
                           </columns>
                         </TableView>
-                        <TextField fx:id="chercher" layoutX="25.0" layoutY="470.0" prefHeight="25.0" prefWidth="296.0" promptText="Recherche par code a barres" />
-                        <Button fx:id="btnActualiser" onAction="#refresh" layoutX="856.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Actualiser" />
+                        <TextField fx:id="chercher" layoutX="25.0" layoutY="470.0" onKeyTyped="#rechercher" prefHeight="25.0" prefWidth="296.0" promptText="Recherche par code a barres" />
+                        <Button fx:id="btnActualiser" layoutX="856.0" layoutY="470.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="104.0" text="Actualiser" />
                         <TextField fx:id="tfmat" layoutX="867.0" layoutY="96.0" prefHeight="25.0" prefWidth="228.0" promptText="Code a barres " />
                         <TextField fx:id="tflib" layoutX="867.0" layoutY="140.0" prefHeight="25.0" prefWidth="225.0" promptText="Libelle de l'article" />
                         <DatePicker fx:id="dateDelivraison" layoutX="865.0" layoutY="351.0" prefHeight="25.0" prefWidth="228.0" promptText="Date de Livraison " />
@@ -68,7 +68,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="tabGrafiknaissance" text="Statistiques">
+          <Tab fx:id="ongletStatistiques"  text="Statistiques">
             <content>
               <AnchorPane fx:id="paneLoadGrafik" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
