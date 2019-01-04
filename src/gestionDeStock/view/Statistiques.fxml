@@ -11,21 +11,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="437.0" prefWidth="1020.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biodata.controller.grafikController">
+<AnchorPane prefHeight="635.0" prefWidth="1163.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionDeStock.controller.StatistiquesController">
    <children>
-      <Label layoutX="710.0" layoutY="14.0" text="Informations en tableau" underline="true">
+      <Label layoutX="823.0" layoutY="21.0" text="Informations en tableau" underline="true">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="tableDetail" layoutX="710.0" layoutY="47.0" prefHeight="316.0" prefWidth="283.0">
+      <TableView fx:id="tableDetail" layoutX="712.0" layoutY="47.0" prefHeight="397.0" prefWidth="441.0">
          <columns>
             <TableColumn minWidth="0.0" prefWidth="8.0" />
             <TableColumn fx:id="colMat" prefWidth="97.0" text="code a barre " />
             <TableColumn fx:id="colQte" prefWidth="177.0" text="nombre d'exemplaires" />
          </columns>
       </TableView>
-      <StackedBarChart fx:id="bar" categoryGap="20.0" layoutY="13.0" prefHeight="399.0" prefWidth="664.0" title="Etat de Stock">
+      <StackedBarChart fx:id="bar" categoryGap="20.0" layoutX="18.0" layoutY="14.0" prefHeight="449.0" prefWidth="664.0" title="Etat de Stock">
          <xAxis>
             <CategoryAxis fx:id="barX" animated="false" label="Code a barres" side="BOTTOM" tickLabelFill="#3208da" tickLabelRotation="-45.0">
                <tickLabelFont>
@@ -42,6 +42,6 @@
          </yAxis>
       </StackedBarChart>
       <Separator layoutX="688.0" orientation="VERTICAL" prefHeight="437.0" prefWidth="6.0" />
-      <Button fx:id="btnActualiser" layoutX="823.0" layoutY="377.0" mnemonicParsing="false" onAction="#Actualiser" prefHeight="25.0" prefWidth="167.0" text="Actualiser" />
+      <Button fx:id="btnActualiser" layoutX="945.0" layoutY="460.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="167.0" text="Actualiser" />
    </children>
 </AnchorPane>
