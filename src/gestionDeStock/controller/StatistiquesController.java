@@ -40,7 +40,7 @@ public class StatistiquesController  implements Initializable {
 	 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		colQte.setCellValueFactory((TableColumn.CellDataFeatures<StatistiquesModel, String> cellData) -> cellData.getValue().qteProperty());
+		colQte.setCellValueFactory((TableColumn.CellDataFeatures<StatistiquesModel, String> cellData) -> cellData.getValue().qteProperty().asString());
 		colMat.setCellValueFactory((TableColumn.CellDataFeatures<StatistiquesModel, String> cellData) -> cellData.getValue().matProperty());
 		 affichage();
 	}

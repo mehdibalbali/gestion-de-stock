@@ -61,7 +61,7 @@ public class implGeneral implements GeneralInterface{
 		 c = new connexion();
 	        PreparedStatement ps;
 	        try {
-	            ps = c.connect().prepareStatement("update articles set matricule=?, libelle=?, quantite=?,prix=?,fournisseur=?,date=? where matricule = ?");
+	            ps = c.connect().prepareStatement("update articles set matricule=?, libelle=?, quantité=?,prix=?,fournisseur=?,date=? where matricule = ?");
 	
 	            ps.setString(1, m.getMatricule());
 	            ps.setString(2, m.getLibelle());
