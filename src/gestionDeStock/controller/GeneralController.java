@@ -145,7 +145,7 @@ private void save(ActionEvent event) {
     m.setLibelle(tflib.getText());
     m.setFournisseur(tfdeal.getText());
     m.setPrix(tfprix.getText());
-    //m.setQuantite(qte.getValue());
+    m.setQuantite(qte.getEditor().getText());
     m.setDateDeLivraison(Date.valueOf(dateDelivraison.getValue()));
     if (StatusCode.equals("0")) {
         crudData.insert(m);
@@ -166,7 +166,7 @@ private void klikTableData(MouseEvent event) {
             GeneralModel clic = tableData.getSelectionModel().getSelectedItems().get(0);
             tfmat.setText(clic.getMatricule());
             tflib.setText(clic.getLibelle());
-            //qte.setValueFactory(clic.quantiteProperty());
+            qte.getEditor().setText(clic.getQuantite());
             tfprix.setText(clic.getPrix());
             tfdeal.setText(clic.getFournisseur());
             dateDelivraison.setValue(LocalDate.parse(clic.getDateDeLivraison().toString()));
