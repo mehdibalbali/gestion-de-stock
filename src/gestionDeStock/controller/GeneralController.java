@@ -166,7 +166,7 @@ private void klikTableData(MouseEvent event) {
             GeneralModel clic = tableData.getSelectionModel().getSelectedItems().get(0);
             tfmat.setText(clic.getMatricule());
             tflib.setText(clic.getLibelle());
-           // qte.setValueFactory(clic.quantiteProperty());
+            //qte.setValueFactory(clic.quantiteProperty());
             tfprix.setText(clic.getPrix());
             tfdeal.setText(clic.getFournisseur());
             dateDelivraison.setValue(LocalDate.parse(clic.getDateDeLivraison().toString()));

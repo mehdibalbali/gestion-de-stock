@@ -1,6 +1,3 @@
-/**
- * 
- */
 package gestionDeStock.model;
 
 import javafx.beans.property.IntegerProperty;
@@ -10,8 +7,23 @@ import javafx.beans.property.StringProperty;
 
 
 public class StatistiquesModel {
-	private final StringProperty mat= new SimpleStringProperty();
-	private final IntegerProperty qte= new SimpleIntegerProperty();
+	private final StringProperty mat;
+	private final StringProperty qte;
+	
+	
+	
+	public StatistiquesModel(String mat, int  qte) {
+		
+		this.mat = new SimpleStringProperty();
+		this.qte = new SimpleStringProperty();
+	}
+	
+public StatistiquesModel() {
+		
+		this.mat = new SimpleStringProperty();
+		this.qte = new SimpleStringProperty();
+	}
+
 	public final StringProperty matProperty() {
 		return this.mat;
 	}
@@ -24,15 +36,15 @@ public class StatistiquesModel {
 		this.matProperty().set(mat);
 	}
 	
-	public final IntegerProperty qteProperty() {
+	public final StringProperty qteProperty() {
 		return this.qte;
 	}
 	
-	public final int getQte() {
+	public final String getQte() {
 		return this.qteProperty().get();
 	}
 	
-	public final void setQte(final int qte) {
+	public final void setQte(final String qte) {
 		this.qteProperty().set(qte);
 	}
 	
