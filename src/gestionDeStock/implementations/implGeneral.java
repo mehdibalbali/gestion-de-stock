@@ -104,7 +104,9 @@ public class implGeneral implements GeneralInterface{
 	                GeneralModel m = new GeneralModel();
 	                m.setMatricule(rs.getString(1));
 	                m.setLibelle(rs.getString(2));
-	                m.setFournisseur(rs.getString(4));
+	                m.setQuantite(rs.getString(3));
+	                m.setPrix(rs.getString(4));
+	                m.setFournisseur(rs.getString(5));
 	                m.setDateDeLivraison(rs.getDate(6));
 	                listData.add(m);
 	            }
