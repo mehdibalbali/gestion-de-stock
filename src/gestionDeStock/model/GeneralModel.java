@@ -21,11 +21,13 @@ public class GeneralModel {
 	private StringProperty prix =new SimpleStringProperty();
 	private final StringProperty Fournisseur = new SimpleStringProperty();
 	private String formatdate;
+	private final IntegerProperty id =new SimpleIntegerProperty();
 	
 	 public GeneralModel() {
 		 
 	 }
-
+	 
+	 
 	public final StringProperty matriculeProperty() {
 		return this.matricule;
 	}
@@ -128,6 +130,24 @@ public class GeneralModel {
 	    public void setFormatdate(String formatdate) {
 	        this.formatdate = formatdate;
 	    }
+
+
+		public final IntegerProperty idProperty() {
+			return this.id;
+		}
+		
+
+
+		public final Integer getId() {
+			return this.idProperty().get();
+		}
+		
+
+
+		public final void setId(final int  id) {
+			this.idProperty().set(id);
+		}
+		
 
 		
 

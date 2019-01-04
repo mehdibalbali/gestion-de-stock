@@ -23,12 +23,12 @@ public class implGeneral implements GeneralInterface{
 	            ResultSet rs = c.connect().createStatement().executeQuery(sql);
 	            while (rs.next()) {   
 	                GeneralModel m = new GeneralModel();
-	                m.setMatricule(rs.getString(1));
-	                m.setLibelle(rs.getString(2));
-	                m.setQuantite(rs.getString(3));
-	                m.setPrix(rs.getString(4));
-	                m.setFournisseur(rs.getString(5));
-	                m.setDateDeLivraison(rs.getDate(6));
+	                m.setMatricule(rs.getString(2));
+	                m.setLibelle(rs.getString(3));
+	                m.setQuantite(rs.getString(4));
+	                m.setPrix(rs.getString(5));
+	                m.setFournisseur(rs.getString(6));
+	                m.setDateDeLivraison(rs.getDate(7));
 	                listData.add(m);
 	            }
 	        } catch (Exception ex) {
@@ -43,13 +43,13 @@ public class implGeneral implements GeneralInterface{
 		 c = new connexion();
 	        PreparedStatement ps;
 	        try {
-	            ps = c.connect().prepareStatement("insert into articles values(?,?,?,?,?,?)");
-	            ps.setString(1, m.getMatricule());
-	            ps.setString(2, m.getLibelle());
+	            ps = c.connect().prepareStatement("insert into articles values(?,?,?,?,?,?,?)");
+	            ps.setString(2, m.getMatricule());
+	            ps.setString(3, m.getLibelle());
 	            ps.setString(4,m.getPrix() );
-	            ps.setString(3, m.getQuantite());
-	            ps.setString(5, m.getFournisseur());
-	            ps.setDate(6, (Date) m.getDateDeLivraison());
+	            ps.setString(5, m.getQuantite());
+	            ps.setString(6, m.getFournisseur());
+	            ps.setDate(7, (Date) m.getDateDeLivraison());
 	            ps.execute();
 	        } catch (Exception e) {
 	            Logger.getLogger(implGeneral.class.getName()).log(Level.SEVERE, null, e);
@@ -61,15 +61,15 @@ public class implGeneral implements GeneralInterface{
 		 c = new connexion();
 	        PreparedStatement ps;
 	        try {
-	            ps = c.connect().prepareStatement("update articles set matricule=?, libelle=?, quantité=?,prix=?,fournisseur=?,date=? where matricule = ?");
+	            ps = c.connect().prepareStatement("update articles set matricule=?, libelle=?, quantité=?,prix=?,fournisseur=?,date=? where id = ?");
 	
-	            ps.setString(1, m.getMatricule());
-	            ps.setString(2, m.getLibelle());
-	            ps.setString(3, m.getQuantite());
-	            ps.setString(4, m.getPrix());
-	            ps.setString(5, m.getFournisseur());
-	            ps.setDate(6, (Date) m.getDateDeLivraison());
-	            ps.setString(7, m.getMatricule());
+	            ps.setString(2, m.getMatricule());
+	            ps.setString(3, m.getLibelle());
+	            ps.setString(4, m.getQuantite());
+	            ps.setString(5, m.getPrix());
+	            ps.setString(6, m.getFournisseur());
+	            ps.setDate(7, (Date) m.getDateDeLivraison());
+	            ps.setInt(1, m.getId());
 	            
 	            ps.execute();
 	            
@@ -84,8 +84,8 @@ public class implGeneral implements GeneralInterface{
 		  c = new connexion();
 	        PreparedStatement ps;
 	        try {
-	            ps = c.connect().prepareStatement("delete from articles where matricule = ?");
-	            ps.setString(1, m.getMatricule());
+	            ps = c.connect().prepareStatement("delete from articles where id = ?");
+	            ps.setInt(1, m.getId());
 	            ps.execute();
 	        } catch (Exception e) {
 	            Logger.getLogger(implGeneral.class.getName()).log(Level.SEVERE, null, e);
@@ -102,12 +102,12 @@ public class implGeneral implements GeneralInterface{
 	            ResultSet rs = c.connect().createStatement().executeQuery(sql);
 	            while (rs.next()) {   
 	                GeneralModel m = new GeneralModel();
-	                m.setMatricule(rs.getString(1));
-	                m.setLibelle(rs.getString(2));
-	                m.setQuantite(rs.getString(3));
-	                m.setPrix(rs.getString(4));
-	                m.setFournisseur(rs.getString(5));
-	                m.setDateDeLivraison(rs.getDate(6));
+	                m.setMatricule(rs.getString(2));
+	                m.setLibelle(rs.getString(3));
+	                m.setQuantite(rs.getString(4));
+	                m.setPrix(rs.getString(5));
+	                m.setFournisseur(rs.getString(6));
+	                m.setDateDeLivraison(rs.getDate(7));
 	                listData.add(m);
 	            }
 	        } catch (Exception ex) {
