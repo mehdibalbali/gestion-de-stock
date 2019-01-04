@@ -43,13 +43,13 @@ public class implGeneral implements GeneralInterface{
 		 c = new connexion();
 	        PreparedStatement ps;
 	        try {
-	            ps = c.connect().prepareStatement("insert into articles values(?,?,?,?,?,?,?)");
-	            ps.setString(2, m.getMatricule());
-	            ps.setString(3, m.getLibelle());
+	            ps = c.connect().prepareStatement("insert into articles (matricule,libelle,prix,quantité,fournisseur,date) values(?,?,?,?,?,?)");
+	            ps.setString(1, m.getMatricule());
+	            ps.setString(2, m.getLibelle());
 	            ps.setString(4,m.getPrix() );
-	            ps.setString(5, m.getQuantite());
-	            ps.setString(6, m.getFournisseur());
-	            ps.setDate(7, (Date) m.getDateDeLivraison());
+	            ps.setString(3, m.getQuantite());
+	            ps.setString(5, m.getFournisseur());
+	            ps.setDate(6, (Date) m.getDateDeLivraison());
 	            ps.execute();
 	        } catch (Exception e) {
 	            Logger.getLogger(implGeneral.class.getName()).log(Level.SEVERE, null, e);
