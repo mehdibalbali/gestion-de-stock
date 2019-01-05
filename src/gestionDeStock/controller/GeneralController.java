@@ -126,6 +126,7 @@ private void clear(){
     tflib.clear();
     tfdeal.clear();
     tfprix.clear();
+    qte.getEditor().clear();
     chercher.clear();
   
     StatusCode = "0";
