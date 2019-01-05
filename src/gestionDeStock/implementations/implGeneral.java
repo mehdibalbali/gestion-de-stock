@@ -12,7 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class implGeneral implements GeneralInterface{
-
+   //ToDo  zid une requette bech tkharrej menha l id 
 	connexion c ;
 	@Override
 	public ObservableList<GeneralModel> getAll() {
@@ -61,15 +61,17 @@ public class implGeneral implements GeneralInterface{
 		 c = new connexion();
 	        PreparedStatement ps;
 	        try {
-	            ps = c.connect().prepareStatement("update articles set matricule=?, libelle=?, quantité=?,prix=?,fournisseur=?,date=? where id = ?");
-	
-	            ps.setString(2, m.getMatricule());
-	            ps.setString(3, m.getLibelle());
-	            ps.setString(4, m.getQuantite());
-	            ps.setString(5, m.getPrix());
-	            ps.setString(6, m.getFournisseur());
-	            ps.setDate(7, (Date) m.getDateDeLivraison());
-	            ps.setInt(1, m.getId());
+	        	
+	            ps = c.connect().prepareStatement("update articles set matricule=?, libelle=?, quantité=?,prix=?,fournisseur=?,date=? where matricule =?");
+	            
+	            
+	            ps.setString(1, m.getMatricule());
+	            ps.setString(2, m.getLibelle());
+	            ps.setString(3, m.getQuantite());
+	            ps.setString(4, m.getPrix());
+	            ps.setString(5, m.getFournisseur());
+	            ps.setDate(6, (Date) m.getDateDeLivraison());
+	            ps.setString(7, m.getMatricule());
 	            
 	            ps.execute();
 	            
@@ -84,8 +86,9 @@ public class implGeneral implements GeneralInterface{
 		  c = new connexion();
 	        PreparedStatement ps;
 	        try {
-	            ps = c.connect().prepareStatement("delete from articles where id = ?");
-	            ps.setInt(1, m.getId());
+	            ps = c.connect().prepareStatement("delete from articles where matricule = ?");
+	            ps.setString(1, m.getMatricule());
+	            
 	            ps.execute();
 	        } catch (Exception e) {
 	            Logger.getLogger(implGeneral.class.getName()).log(Level.SEVERE, null, e);
