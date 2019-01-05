@@ -43,7 +43,7 @@ public class implStatistiques implements StatistiquesInterface{
 		 ObservableList<Object> barCar = FXCollections.observableArrayList();
 	        try {
 	        	c =new connexion();
-	              String sql = "select distinct(matricule) as mat, "
+	              String sql = "select distinct(libelle) as mat, "
                         + "sum(quantité) as nombre "
                         + "from articles "
                         + "group by matricule "
