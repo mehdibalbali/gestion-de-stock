@@ -1,7 +1,6 @@
 package gestionDeStock.implementations;
 
 import java.sql.ResultSet;
-import com.mysql.jdbc.Connection;
 import gestionDeStock.connexion.connexion;
 import gestionDeStock.interfaces.StatistiquesInterface;
 import gestionDeStock.model.StatistiquesModel;

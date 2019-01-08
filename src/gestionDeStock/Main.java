@@ -16,10 +16,11 @@ public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/gestionDeStock/view/General.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gestionDeStock/view/Login.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Gestion de Stock ");
+        //scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.show();
     }
 

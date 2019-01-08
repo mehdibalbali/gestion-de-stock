@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2019 at 12:00 AM
+-- Generation Time: Jan 08, 2019 at 01:50 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -45,7 +45,7 @@ CREATE TABLE `articles` (
 INSERT INTO `articles` (`id`, `matricule`, `libelle`, `quantité`, `prix`, `fournisseur`, `date`) VALUES
 (7, '9911773344', 'ARticle6', '66', '43', 'fournisseur2', '2018-12-18'),
 (9, '1100229933', 'article5', '100', '50', 'fournisseur2', '2018-11-11'),
-(19, '1256894312', 'article2', '96', '600', 'fournisseur9', '2018-10-08'),
+(19, '1256894312', 'article21', '96', '600', 'fournisseur9', '2018-10-08'),
 (21, '3006187654', 'article7', '20', '33', 'Fournisseur1', '2018-10-25'),
 (22, '229870511', 'article1', '10', '71', 'fournisseur2', '2018-10-27'),
 (23, '1111995577', 'article4', '5', '28', 'fournisseur9', '2018-11-05'),
@@ -53,6 +53,25 @@ INSERT INTO `articles` (`id`, `matricule`, `libelle`, `quantité`, `prix`, `four
 (25, '3665522991', 'Article8', '12', '39', 'fourisseur3', '2018-12-29'),
 (26, '1427549033', 'article10', '34', '66', 'fournisseur 2', '2019-01-01'),
 (27, '763409124', 'article12', '20', '53', 'fournisseur8', '2018-12-19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `username` varchar(6) NOT NULL,
+  `password` varchar(19) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`) VALUES
+('admin', 'mehd'),
+('admin', 'mehdi');
 
 --
 -- Indexes for dumped tables
