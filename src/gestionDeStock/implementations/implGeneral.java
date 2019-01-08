@@ -12,7 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class implGeneral implements GeneralInterface{
-   //ToDo  zid une requette bech tkharrej menha l id 
+   
 	connexion c ;
 	@Override
 	public ObservableList<GeneralModel> getAll() {

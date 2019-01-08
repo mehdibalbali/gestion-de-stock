@@ -9,20 +9,23 @@ import javafx.beans.property.StringProperty;
 public class StatistiquesModel {
 	private final StringProperty mat;
 	private final IntegerProperty qte;
+	private final StringProperty lib;
 	
 	
-	public StatistiquesModel(String mat, int qte) {
+	public StatistiquesModel(String mat, int qte,String lib) {
 		this.mat =  new SimpleStringProperty();
 		this.qte =  new SimpleIntegerProperty();
+		this.lib =  new SimpleStringProperty();
 	}
 	
 	
 	public StatistiquesModel() {
 		this.mat =  new SimpleStringProperty();
 		this.qte =  new SimpleIntegerProperty();
+		this.lib =  new SimpleStringProperty();
 	}
 
-
+	
 	public final StringProperty matProperty() {
 		return this.mat;
 	}
@@ -56,6 +59,24 @@ public class StatistiquesModel {
 	public final void setQte(final int qte) {
 		this.qteProperty().set(qte);
 	}
+
+
+	public final StringProperty libProperty() {
+		return this.lib;
+	}
+	
+
+
+	public final String getLib() {
+		return this.libProperty().get();
+	}
+	
+
+
+	public final void setLib(final String lib) {
+		this.libProperty().set(lib);
+	}
+	
 	
 	
 	

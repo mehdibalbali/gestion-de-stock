@@ -17,15 +17,17 @@ public class implStatistiques implements StatistiquesInterface{
 		 ObservableList<StatistiquesModel> listData= FXCollections.observableArrayList();
 		 try {
 	            String sql = "select distinct(matricule) as mat, "
-	                        + "sum(quantité) as nombre "
+	                        + "sum(quantité) as nombre,"
+	                        +"libelle as lib "
 	                        + "from articles "
 	                        + "group by matricule "
-	                        + "order by matricule";
+	                        + "order by nombre DESC";
 	            ResultSet rs = c.connect().createStatement().executeQuery(sql);
 	            while (rs.next()) {       
 	                StatistiquesModel m = new StatistiquesModel();
 	                m.setMat(rs.getString("mat"));
 	                m.setQte(rs.getInt("nombre"));
+	                m.setLib(rs.getString("lib"));
 	                listData.add(m);
 	            }
 	        } catch (Exception e) {

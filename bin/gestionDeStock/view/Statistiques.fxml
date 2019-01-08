@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="546.0" prefWidth="1163.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionDeStock.controller.StatistiquesController">
    <children>
-      <Label layoutX="823.0" layoutY="21.0" text="Informations en tableau" underline="true">
+      <Label layoutX="823.0" layoutY="21.0" text="Informations en Tableau" underline="true">
          <font>
             <Font size="18.0" />
          </font>
@@ -21,8 +21,9 @@
       <TableView fx:id="tableDetail" layoutX="712.0" layoutY="47.0" prefHeight="397.0" prefWidth="441.0">
          <columns>
             <TableColumn minWidth="0.0" prefWidth="8.0" />
-            <TableColumn fx:id="colMat" prefWidth="97.0" text="code a barre " />
-            <TableColumn fx:id="colQte" prefWidth="177.0" text="nombre d'exemplaires" />
+            <TableColumn fx:id="colMat" prefWidth="97.0" text="Code a Barre " />
+            <TableColumn fx:id="colLib" prefWidth="150.5" text="Nom de l'article" />
+            <TableColumn fx:id="colQte" prefWidth="174.5" text="Nombre d'exemplaires" />
          </columns>
       </TableView>
       <StackedBarChart fx:id="bar" categoryGap="20.0" layoutX="18.0" layoutY="14.0" prefHeight="449.0" prefWidth="664.0" title="Etat de Stock">
@@ -42,6 +43,6 @@
          </yAxis>
       </StackedBarChart>
       <Separator layoutX="700.0" layoutY="3.0" orientation="VERTICAL" prefHeight="531.0" prefWidth="10.0" />
-      <Button fx:id="btnActualiser" layoutX="945.0" layoutY="460.0" onAction="#Actualiser" mnemonicParsing="false" prefHeight="25.0" prefWidth="167.0" text="Actualiser" />
+      <Button fx:id="btnActualiser" layoutX="945.0" layoutY="460.0" mnemonicParsing="false" onAction="#Actualiser" prefHeight="25.0" prefWidth="167.0" text="Actualiser" />
    </children>
 </AnchorPane>

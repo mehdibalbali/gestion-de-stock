@@ -27,6 +27,8 @@ public class StatistiquesController  implements Initializable {
 	@FXML
 	private TableColumn<StatistiquesModel, String> colMat;
 	@FXML
+	private TableColumn<StatistiquesModel, String> colLib;
+	@FXML
 	 private StackedBarChart bar;
 	 @FXML
 	 private NumberAxis barY;
@@ -42,7 +44,8 @@ public class StatistiquesController  implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		colQte.setCellValueFactory((TableColumn.CellDataFeatures<StatistiquesModel, String> cellData) -> cellData.getValue().qteProperty().asString());
 		colMat.setCellValueFactory((TableColumn.CellDataFeatures<StatistiquesModel, String> cellData) -> cellData.getValue().matProperty());
-		 affichage();
+		colLib.setCellValueFactory((TableColumn.CellDataFeatures<StatistiquesModel, String> cellData) -> cellData.getValue().libProperty());
+		affichage();
 	}
 	 private void affichage(){
 	        details = crudStatisitiques.getMatricule();

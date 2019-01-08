@@ -20,7 +20,7 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Gestion de Stock ");
-        //scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        
         stage.show();
     }
 

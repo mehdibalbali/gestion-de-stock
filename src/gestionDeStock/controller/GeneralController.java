@@ -3,10 +3,12 @@ package gestionDeStock.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
+
 import gestionDeStock.implementations.implGeneral;
 import gestionDeStock.interfaces.GeneralInterface;
 import gestionDeStock.model.GeneralModel;
@@ -23,13 +25,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Labeled;
 import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumnBase;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -126,7 +125,7 @@ private void clear(){
     tflib.clear();
     tfdeal.clear();
     tfprix.clear();
-    qte.getEditor().clear();
+    qte.getEditor().setText("0");
     chercher.clear();
   
     StatusCode = "0";

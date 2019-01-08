@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Spinner?>
@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="635.0" prefWidth="1163.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gestionDeStock.controller.GeneralController">
+<AnchorPane id="AnchorPane" prefHeight="635.0" prefWidth="1163.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionDeStock.controller.GeneralController">
    <children>
       <TabPane layoutY="85.0" prefHeight="462.0" prefWidth="953.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
         <tabs>
@@ -37,7 +37,6 @@
                               <VBox spacing="3.0" />
                            </children>
                         </VBox>
-                        <Button fx:id="btnEnregistrer" layoutX="1011.0" layoutY="470.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="104.0" text="Enregistrer" />
                         <TableView fx:id="tableData" layoutX="1.0" layoutY="1.0" prefHeight="456.0" prefWidth="805.0">
                           <columns>
                             <TableColumn minWidth="8.0" prefWidth="9.0" />
@@ -51,10 +50,8 @@
                           </columns>
                         </TableView>
                         <TextField fx:id="chercher" layoutX="25.0" layoutY="470.0" onKeyTyped="#rechercher" prefHeight="25.0" prefWidth="296.0" promptText="Recherche par code a barres" />
-                        <Button fx:id="btnActualiser" layoutX="856.0" layoutY="470.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="104.0" text="Actualiser" />
                         <TextField fx:id="tfmat" layoutX="867.0" layoutY="96.0" prefHeight="25.0" prefWidth="228.0" promptText="Code a barres " />
                         <TextField fx:id="tflib" layoutX="867.0" layoutY="140.0" prefHeight="25.0" prefWidth="225.0" promptText="Libelle de l'article" />
-                        <DatePicker fx:id="dateDelivraison" layoutX="865.0" layoutY="351.0" prefHeight="25.0" prefWidth="228.0" promptText="Date de Livraison " />
                         <Label layoutX="870.0" layoutY="80.0" text="Code a Barres " />
                         <Label layoutX="868.0" layoutY="123.0" text="Libelle" />
                         <Label layoutX="867.0" layoutY="173.0" text="Quantité:" />
@@ -64,18 +61,21 @@
                         <Label layoutX="866.0" layoutY="276.0" text="Fournisseur" />
                         <TextField fx:id="tfdeal" layoutX="866.0" layoutY="293.0" prefHeight="25.0" prefWidth="233.0" promptText="nom de fournisseur" />
                         <Label layoutX="866.0" layoutY="326.0" text="date de Livraison : " />
+                        <JFXDatePicker fx:id="dateDelivraison" defaultColor="#5f6161ed" layoutX="863.0" layoutY="353.0" prefHeight="28.0" prefWidth="236.0" />
+                        <Button fx:id="btnActualiser" layoutX="857.0" layoutY="458.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="104.0" text="Actualiser" />
+                        <Button fx:id="btnEnregistrer" layoutX="1021.0" layoutY="458.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="104.0" text="Enregister" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="ongletStatistiques"  text="Statistiques">
+          <Tab fx:id="ongletStatistiques" text="Statistiques">
             <content>
               <AnchorPane fx:id="paneLoadGrafik" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
         </tabs>
       </TabPane>
-      <AnchorPane prefHeight="85.0" prefWidth="1169.0" styleClass="headerPane" >
+      <AnchorPane prefHeight="85.0" prefWidth="1169.0" styleClass="headerPane">
          <children>
             <Text fill="#c6c6c6" layoutX="28.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion De Stock" underline="true">
                <font>

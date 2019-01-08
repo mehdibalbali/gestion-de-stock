@@ -11,7 +11,6 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.control.SpinnerValueFactory;
 
 public class GeneralModel {
 	private final StringProperty matricule = new SimpleStringProperty();
@@ -21,7 +20,7 @@ public class GeneralModel {
 	private StringProperty prix =new SimpleStringProperty();
 	private final StringProperty Fournisseur = new SimpleStringProperty();
 	private String formatdate;
-	private final IntegerProperty id =new SimpleIntegerProperty();
+	
 	
 	 public GeneralModel() {
 		 
@@ -132,22 +131,6 @@ public class GeneralModel {
 	    }
 
 
-		public final IntegerProperty idProperty() {
-			return this.id;
-		}
-		
-
-
-		public final Integer getId() {
-			return this.idProperty().get();
-		}
-		
-
-
-		public final void setId(final int  id) {
-			this.idProperty().set(id);
-		}
-		
 
 		
 
